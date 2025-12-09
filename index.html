@@ -1,0 +1,357 @@
+<!-- Updated Portfolio with Icons + Purple Theme -->
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Portfolio | KIAN C. SEGURA</title>
+
+  <!-- ICON CDN -->
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
+
+  <style>
+    /* GLOBAL STYLE */
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      margin: 0;
+      background: linear-gradient(to bottom right, #ece7ff, #ffffff);
+      color: #333;
+      animation: fadeInPage 1s ease-in-out;
+    }
+
+    @keyframes fadeInPage { from { opacity: 0; } to { opacity: 1; } }
+
+    /* HEADER */
+    header {
+      background: linear-gradient(90deg, #5b21b6, #7c3aed);
+      color: white;
+      padding: 25px;
+      text-align: center;
+      box-shadow: 0 3px 18px rgba(0,0,0,0.4);
+      position: relative;
+      animation: slideDown 0.8s ease-out;
+    }
+
+    @keyframes slideDown {
+      from { transform: translateY(-40px); opacity: 0; }
+      to { transform: translateY(0); opacity: 1; }
+    }
+
+    /* MENU ICON */
+    .menu-icon {
+      display: none;
+      font-size: 30px;
+      color: white;
+      cursor: pointer;
+      position: absolute;
+      right: 20px;
+      top: 22px;
+    }
+
+    nav { margin-top: 12px; }
+
+    nav a {
+      color: #f5f3ff;
+      margin: 0 15px;
+      text-decoration: none;
+      font-weight: bold;
+      padding: 7px 14px;
+      border-radius: 8px;
+      transition: 0.3s;
+      font-size: 15px;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    nav a:hover {
+      background: rgba(255,255,255,0.2);
+      color: #ffd700;
+      transform: translateY(-2px);
+    }
+
+    /* MOBILE MENU */
+    @media (max-width: 768px) {
+      nav {
+        display: none;
+        flex-direction: column;
+        background: #5b21b6;
+        padding: 15px;
+        border-radius: 10px;
+      }
+
+      nav a {
+        display: block;
+        margin: 8px 0;
+        text-align: center;
+      }
+
+      .menu-icon { display: block; }
+    }
+
+    nav.show { display: flex !important; }
+
+    /* SECTIONS */
+    section { padding: 70px 20px; }
+
+    .section-title {
+      text-align: center;
+      margin-bottom: 35px;
+      font-size: 32px;
+      color: #4c1d95;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    /* HERO */
+    .hero {
+      text-align: center;
+      background: white;
+      padding: 90px 20px;
+      border-radius: 18px;
+      max-width: 950px;
+      margin: 40px auto;
+      box-shadow: 0 4px 18px rgba(0,0,0,0.15);
+      animation: popIn 1s ease-out;
+    }
+
+    @keyframes popIn {
+      0% { opacity: 0; transform: scale(0.9); }
+      100% { opacity: 1; transform: scale(1); }
+    }
+
+    /* BOX CARDS */
+    .box {
+      background: white;
+      padding: 25px;
+      margin: 25px auto;
+      border-radius: 15px;
+      max-width: 750px;
+      box-shadow: 0 3px 12px rgba(0,0,0,0.15);
+      transition: 0.3s;
+    }
+
+    .box:hover {
+      transform: translateY(-8px) scale(1.03);
+      box-shadow: 0 8px 22px rgba(123, 31, 162, 0.4);
+    }
+
+    /* ABOUT */
+    .container {
+      max-width: 850px;
+      margin: auto;
+      background: white;
+      padding: 35px;
+      border-radius: 18px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    }
+
+    img.profile {
+      width: 170px;
+      height: 170px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 5px solid #d8b4fe;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    }
+
+    /* CONTACT FORM */
+    form {
+      max-width: 480px;
+      margin: 40px auto;
+      background: white;
+      padding: 30px;
+      border-radius: 18px;
+      box-shadow: 0 4px 18px rgba(0,0,0,0.15);
+    }
+
+    input, textarea {
+      width: 100%;
+      padding: 14px;
+      margin-top: 12px;
+      border: 2px solid #ddd6fe;
+      border-radius: 10px;
+      background: #faf5ff;
+      transition: 0.3s;
+    }
+
+    input:focus, textarea:focus {
+      border-color: #7c3aed;
+      transform: scale(1.02);
+      box-shadow: 0 0 8px #c4b5fd;
+    }
+
+    button {
+      padding: 14px;
+      background: #6d28d9;
+      color: white;
+      border: none;
+      border-radius: 10px;
+      width: 100%;
+      font-size: 16px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    button:hover {
+      background: #4c1d95;
+      transform: scale(1.05);
+      box-shadow: 0 6px 16px rgba(76, 29, 149, 0.4);
+    }
+
+    /* MINI SECTION MENU */
+    .section-menu {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .section-menu a {
+      text-decoration: none;
+      background: #f5f3ff;
+      padding: 8px 14px;
+      border-radius: 10px;
+      color: #4c1d95;
+      font-weight: bold;
+      margin: 0 8px;
+      display: inline-flex;
+      gap: 6px;
+      align-items: center;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.12);
+      transition: 0.3s;
+    }
+
+    .section-menu a:hover {
+      background: #7c3aed;
+      color: white;
+      transform: translateY(-3px);
+    }
+
+    /* SKILLS */
+    .skill {
+      background: #ede9fe;
+      padding: 12px;
+      border-radius: 10px;
+      text-align: center;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      transition: 0.3s;
+    }
+
+    .skill:hover {
+      transform: scale(1.05);
+      background: #c4b5fd;
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <h1><i class="ri-star-smile-fill"></i> KIAN C. SEGURA</h1>
+
+  <div class="menu-icon" onclick="toggleMenu()"><i class="ri-menu-line"></i></div>
+
+  <nav id="menu">
+    <a href="#home"><i class="ri-home-4-line"></i> Home</a>
+    <a href="#academics"><i class="ri-award-line"></i> Academics</a>
+    <a href="#about"><i class="ri-user-line"></i> About</a>
+    <a href="#contact"><i class="ri-mail-line"></i> Contact</a>
+  </nav>
+</header>
+
+<!-- HOME -->
+<section id="home">
+  <div class="hero">
+    <h2>Welcome to My Portfolio</h2>
+    <p>Discover my achievements, skills, and journey.</p>
+  </div>
+</section>
+
+<!-- ACADEMICS -->
+<section id="academics">
+  <h2 class="section-title"><i class="ri-award-line"></i> academics & awards</h2>
+
+  <div class="section-menu">
+    <a href="#home"><i class="ri-home-4-line"></i> Home</a>
+    <a href="#about"><i class="ri-user-line"></i> About</a>
+    <a href="#contact"><i class="ri-mail-line"></i> Contact</a>
+  </div>
+
+  <div class="box">
+    <img src="594411121_4214000858855577_126564794684570297_n.jpg" style="width:100%; border-radius:12px;">
+    <h3>Introduction to Python</h3>
+    <p>Completed with practical and theoretical understanding.</p>
+  </div>
+
+  <div class="box">
+    <img src="597142806_1806377113376460_3664759445693851317_n.jpg" style="width:100%; border-radius:12px;">
+    <h3>With Honors</h3>
+    <p>Awarded for academic excellence during 1st and 2nd Quarter of SY 2023-2024.</p>
+  </div>
+
+  <div class="box">
+    <img src="594342294_2047016032727173_4745765543679778787_n.jpg" style="width:100%; border-radius:12px;">
+    <h3>Coding Foundation</h3>
+    <p>has successfully completed the course by demonstrating theoretical and practical understanding.</p>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+  <h2 class="section-title"><i class="ri-user-line"></i> about me</h2>
+
+  <div class="section-menu">
+    <a href="#home"><i class="ri-home-4-line"></i> Home</a>
+    <a href="#academics"><i class="ri-award-line"></i> Academics</a>
+    <a href="#contact"><i class="ri-mail-line"></i> Contact</a>
+  </div>
+
+  <div class="container">
+    <div style="text-align:center;">
+      <img src="597070498_1216704493725489_8971278234935995584_n.jpg" class="profile">
+      <h2 style="color:#4c1d95;">KIAN C. SEGURA</h2>
+    </div>
+
+    <p>
+      I am a dedicated student passionate about improving my skills,
+      discovering new knowledge, and achieving academic excellence.
+    </p>
+
+    <h3>Skills</h3>
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 20px;">
+      <div class="skill"><i class="ri-camera-2-line"></i> Photo Editing</div>
+      <div class="skill"><i class="ri-movie-line"></i> Video Editing</div>
+      <div class="skill"><i class="ri-chat-1-line"></i> Communication</div>
+      <div class="skill"><i class="ri-video-line"></i> Videographer</div>
+    </div>
+
+    <h3 style="margin-top:25px;">Education</h3>
+    <p>College Student</p>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <h2 class="section-title"><i class="ri-mail-line"></i> contact me</h2>
+
+  <div class="section-menu">
+    <a href="#home"><i class="ri-home-4-line"></i> Home</a>
+    <a href="#academics"><i class="ri-award-line"></i> Academics</a>
+    <a href="#about"><i class="ri-user-line"></i> About</a>
+  </div>
+
+  <form>
+    <h3><i class="ri-send-plane-line"></i> Send a Message</h3>
+    <input type="text" placeholder="Your Name">
+    <input type="email" placeholder="Your Email">
+    <textarea rows="4" placeholder="Your Message"></textarea>
+    <button type="submit">Submit</button>
+  </form>
+</section>
+
+<script>
+  function toggleMenu() {
+    document.getElementById("menu").classList.toggle("show");
+  }
+</script>
+
+</body>
+</html>
